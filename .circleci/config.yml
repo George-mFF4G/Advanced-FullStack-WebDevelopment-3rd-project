@@ -76,7 +76,7 @@ jobs:
           # TODO: Install, build, deploy in both apps
           command: |
             echo "# TODO: Install, build, deploy in both apps"
-          artifact: www/Archive.zip
+            artifact: www/Archive.zip
             npm run api:deploy
             npm run frontend:deploy
 workflows:
