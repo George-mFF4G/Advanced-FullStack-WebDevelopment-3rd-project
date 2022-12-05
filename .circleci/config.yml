@@ -1,90 +1,86 @@
 version: 2.1
 orbs:
-  # orgs contain basc recipes and reproducible actions (install node, aws, etc.)
+  # Basic Configuration To The Environment
   node: circleci/node@5.0.2
   eb: circleci/aws-elastic-beanstalk@2.0.1
   aws-cli: circleci/aws-cli@3.1.1
-  # different jobs are calles later in the workflows sections
 jobs:
   build:
     docker:
-      # the base image can run most needed actions with orbs
+      # The Base Image
       - image: "cimg/node:14.15"
     steps:
-      # install node and checkout code
+      # Install Node And Check The Code And Installation
       - node/install:
           node-version: '16.0.0'
       - checkout
       - eb/setup
       - aws-cli/setup
       - checkout
+      # User Root User To Install The Dependencies
       - run:
-          name: Install pip
+          name: Install Python PIP
           command: |
             sudo apt update
             sudo apt install -y python3-pip python-dev
       - run:
-          name: Install AWS dependencies
+          name: Install AWS CLI
           command: |
             sudo pip3 install awsebcli
-      # Use root level package.json to install dependencies in the frontend app
+      # Install FrontEnd Package Dependencies
       - run:
-          name: Install Front-End Dependencies
+          name: Install FrontEnd Package Dependencies
           command: |
-            echo "NODE --version"
-            echo $(node --version)
-            echo "NPM --version"
-            echo $(npm --version)
             npm run frontend:install
-      # TODO: Install dependencies in the the backend API
+      # TODO: Install BackEnd Package Dependencies
       - run:
-          name: Install API Dependencies
+          name: Install BackEnd Package Dependencies
           command: |
-            echo "TODO: Install dependencies in the the backend API  "
             npm run api:install
-      # TODO: Lint the frontend
+      # TODO: Run Lint Command On The FrontEnd
       - run:
-          name: Front-End Lint
+          name: FrontEnd Lint
           command: |
-            echo "TODO: Lint the frontend"
+            echo "TODO: Lint Command FrontEnd"
             npm run frontend:lint
-      # TODO: Build the frontend app
+      # TODO: FrontEnd Build
       - run:
-          name: Front-End Build
+          name: Build FrontEnd
           command: |
-            echo "TODO: Build the frontend app"
+            echo "TODO: Build FrontEnd"
             npm run frontend:build
-      # TODO: Build the backend API
+      # TODO: Build BackEnd
       - run:
-          name: API Build
+          name: Build BackEnd
           command: |
-            echo "TODO: Build the backend API"
+            echo "TODO: Build BackEnd"
             npm run api:build
-      # deploy step
+      # First To Manual Deploy
       - run:
-          name: Deploy App
-          # TODO: Install, build, deploy in both apps
+          name: Deploy Full Web App 
+          # TODO: Install ,Build ,Deploy All The web Project
           command: |
-            echo "# TODO: Install, build, deploy in both apps"
+            echo "# TODO: Install ,Build ,Deploy All The web Project"
+          # TODO: Install ,Build ,Deploy All The BackEnd
             npm run api:deploy
+          # TODO: Install ,Build ,Deploy All The FrontEnd
             npm run frontend:deploy
-  # deploy step will run only after manual approval
+  # This Deploy Step Will Run After The Approval From the Further Step
   deploy:
     docker:
       - image: "cimg/base:stable"
-      # more setup needed for aws, node, elastic beanstalk
+      # More Steps For AWS
     steps:
       - node/install:
           node-version: '16.0.0'
       - eb/setup
       - aws-cli/setup
       - checkout
-      # - artifact: www/Archive.zip
       - run:
-          name: Deploy App
-          # TODO: Install, build, deploy in both apps
+          name: Deploy Full Web App
+          # TODO: Install ,Build ,Deploy All The web Project
           command: |
-            echo "# TODO: Install, build, deploy in both apps"
+            echo "# TODO: Install ,Build ,Deploy All The web Project"
             npm run api:deploy
             npm run frontend:deploy
             
