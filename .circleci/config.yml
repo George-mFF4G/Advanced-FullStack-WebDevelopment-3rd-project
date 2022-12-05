@@ -55,7 +55,7 @@ jobs:
           command: |
             echo "TODO: Build BackEnd"
             npm run api:build
-      # First To Manual Deploy
+      # TODO: First To Manual Deploy
       - run:
           name: deploy Front&BackEnd
           # TODO: Install ,Build ,Deploy All The web Project
