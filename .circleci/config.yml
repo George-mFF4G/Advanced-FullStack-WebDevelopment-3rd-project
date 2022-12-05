@@ -39,7 +39,7 @@ jobs:
             npm run api:install
       # TODO: Run Lint Command On The FrontEnd
       - run:
-          name: FrontEnd Lint
+          name: Lint FrontEnd
           command: |
             echo "TODO: Lint Command FrontEnd"
             npm run frontend:lint
@@ -58,7 +58,7 @@ jobs:
       # deploy step
       - run:
           name: Deploy FullApp
-          # TODO: Install, build, deploy in both apps
+          # TODO: Install,Build&Deploy the Full Web App
           command: |
             echo "# TODO: Install,Build&Deploy the Full Web App"
             npm run api:deploy
