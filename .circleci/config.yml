@@ -61,9 +61,9 @@ jobs:
           # TODO: Install ,Build ,Deploy All The web Project
           command: |
             echo "# TODO: Install ,Build ,Deploy All The web Project"
-          # TODO: Install ,Build ,Deploy All The BackEnd
+          # Install ,Build ,Deploy All The BackEnd
             npm run api:deploy
-          # TODO: Install ,Build ,Deploy All The FrontEnd
+          # Install ,Build ,Deploy All The FrontEnd
             npm run frontend:deploy
   # This Deploy Step Will Run After The Approval From the Further Step
   deploy:
