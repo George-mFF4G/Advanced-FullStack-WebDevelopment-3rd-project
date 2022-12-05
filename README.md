@@ -58,7 +58,6 @@ There are no Unit test on the back-end
 Unit tests are using the Jasmine Framework.
 
 ### End to End Tests:
-
 The e2e tests are using Protractor and Jasmine.
 
 ## Built With
@@ -70,3 +69,29 @@ The e2e tests are using Protractor and Jasmine.
 ## License
 
 [License](LICENSE.txt)
+
+# All .env Data 
+- {
+- POSTGRES_USERNAME=postgres
+- POSTGRES_PASSWORD=postgres
+- POSTGRES_HOST=database-1.cxyku6tqond9.us-east-1.rds.amazonaws.com
+- POSTGRES_DB=postgres
+- AWS_BUCKET=arn:aws:s3:::george-udagram
+- AWS_REGION=us-east-1
+- AWS_PROFILE=default
+- JWT_SECRET=mysecretstring
+- URL=http://georgeudagram-env.eba-rmfuprn3.us-east-1.elasticbeanstalk.com/
+- AWS_ACCESS_KEY_ID=AKIAXU6U2HOSF34Q37XE
+- AWS_SECRET_ACCESS_KEY=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
+}
+
+## Project Link
+- http://george-udagram.s3-website-us-east-1.amazonaws.com
+
+## ScreenShots
+- ADD in ScreenShots Folder
+## Diagrams 
+- ADD in Diagrams Folder
+
+## Documents
+- ADD in Documents Folder
