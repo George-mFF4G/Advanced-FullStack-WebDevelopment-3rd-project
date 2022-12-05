@@ -57,10 +57,10 @@ jobs:
             npm run api:build
       # deploy step
       - run:
-          name: Deploy App
+          name: Deploy FullApp
           # TODO: Install, build, deploy in both apps
           command: |
-            echo "# TODO: Install, build, deploy in both apps"
+            echo "# TODO: Install,Build&Deploy the Full Web App"
             npm run api:deploy
             npm run frontend:deploy
   # This Deploy Step Will Run After The Approval From the Further Step
