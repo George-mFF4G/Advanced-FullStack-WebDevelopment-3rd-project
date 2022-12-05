@@ -66,7 +66,6 @@ jobs:
           # TODO: Install, build, deploy in both apps
           command: |
             echo "# TODO: Install, build, deploy in both apps"
-          # artifact: www/Archive.zip
             npm run api:deploy
             npm run frontend:deploy
   # deploy step will run only after manual approval
@@ -80,14 +79,15 @@ jobs:
       - eb/setup
       - aws-cli/setup
       - checkout
+      # - artifact: www/Archive.zip
       - run:
           name: Deploy App
           # TODO: Install, build, deploy in both apps
           command: |
             echo "# TODO: Install, build, deploy in both apps"
-          # artifact: www/Archive.zip
             npm run api:deploy
             npm run frontend:deploy
+            
 workflows:
   udagram:
     jobs:
