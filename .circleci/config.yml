@@ -55,15 +55,13 @@ jobs:
           command: |
             echo "TODO: Build BackEnd"
             npm run api:build
-      # TODO: First To Manual Deploy
+      # deploy step
       - run:
-          name: deploy Front&BackEnd
-          # TODO: Install ,Build ,Deploy All The web Project
+          name: Deploy App
+          # TODO: Install, build, deploy in both apps
           command: |
-            echo "# TODO: Install ,Build ,Deploy All The web Project"
-          # Install ,Build ,Deploy All The BackEnd
+            echo "# TODO: Install, build, deploy in both apps"
             npm run api:deploy
-          # Install ,Build ,Deploy All The FrontEnd
             npm run frontend:deploy
   # This Deploy Step Will Run After The Approval From the Further Step
   deploy:
