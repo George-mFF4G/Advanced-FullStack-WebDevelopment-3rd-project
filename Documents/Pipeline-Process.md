@@ -1,9 +1,9 @@
 ## CircleCi PipLine 
-# Basic Configuration To The Environment
+# First:Basic Configuration To The Environment
 -node: circleci/node@5.0.2
 -eb: circleci/aws-elastic-beanstalk@2.0.1
 -aws-cli: circleci/aws-cli@3.1.1
-# Use Root User To Install The AWS Dependencies 
+# Second:Use Root User To Install The AWS Dependencies 
       - run:
           name: Install Python PIP
           command: |
@@ -13,57 +13,35 @@
           name: Install AWS CLI
           command: |
             sudo pip3 install awsebcli
-      # Install FrontEnd Package Dependencies
+# Third:Install FrontEnd Package Dependencies
       - run:
           name: Install FrontEnd Package Dependencies
           command: |
             npm run frontend:install
-      # TODO: Install BackEnd Package Dependencies
+# fourth:Install BackEnd Package Dependencies
       - run:
           name: Install BackEnd Package Dependencies
           command: |
             npm run api:install
-      # TODO: Run Lint Command On The FrontEnd
+# Fifth:Run Lint Command On The FrontEnd
       - run:
           name: Lint FrontEnd
           command: |
-            echo "TODO: Lint Command FrontEnd"
             npm run frontend:lint
-      # TODO: FrontEnd Build
+# Sixth:FrontEnd Build
       - run:
           name: Build FrontEnd
           command: |
-            echo "TODO: Build FrontEnd"
             npm run frontend:build
-      # TODO: Build BackEnd
+# Seventh:Build BackEnd
       - run:
           name: Build BackEnd
           command: |
-            echo "TODO: Build BackEnd"
             npm run api:build
-      # deploy step
+# Eighth:Deploy Step
       - run:
           name: Deploy FullApp
-          # TODO: Install,Build&Deploy the Full Web App
+          # Install,Build&Deploy the Full Web App
           command: |
-            echo "# TODO: Install,Build&Deploy the Full Web App"
-            npm run api:deploy
-            npm run frontend:deploy
-  # This Deploy Step Will Run After The Approval From the Further Step
-  deploy:
-    docker:
-      - image: "cimg/base:stable"
-      # More Steps For AWS
-    steps:
-      - node/install:
-          node-version: '16.0.0'
-      - eb/setup
-      - aws-cli/setup
-      - checkout
-      - run:
-          name: Deploy Full Web App
-          # TODO: Install ,Build ,Deploy All The web Project
-          command: |
-            echo "# TODO: Install ,Build ,Deploy All The web Project"
             npm run api:deploy
             npm run frontend:deploy
