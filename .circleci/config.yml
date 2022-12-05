@@ -57,7 +57,7 @@ jobs:
             npm run api:build
       # First To Manual Deploy
       - run:
-          name: Deploy Full Web App 
+          name: Deploy FullWebApp 
           # TODO: Install ,Build ,Deploy All The web Project
           command: |
             echo "# TODO: Install ,Build ,Deploy All The web Project"
